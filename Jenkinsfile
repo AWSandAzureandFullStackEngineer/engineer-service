@@ -5,7 +5,7 @@ pipeline {
         stage("build"){
             steps {
                 echo "----------- build started ----------"
-                    sh 'mvn compile jib:build -Dimage=steven8519/engineers-service:$(date +%Y%m%d%H%M%S)'
+                    sh 'mvn clean install -X -Dmaven.test.skip=true'
                 echo "----------- build complted ----------"
             }
         }
