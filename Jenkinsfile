@@ -41,7 +41,7 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                sh 'docker build -t steven8519/engineer-service:$(date +%Y%m%d%H%M%S) .'
+                sh 'docker build -t steven8519/engineer-service:20240105000642 .'
             }
         }
         stage('Push Docker Image') {
@@ -49,7 +49,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
                     sh "docker login -u steven8519 -p ${dockerhub}"
                 }
-                sh 'docker push steven8519/engineer-service:$(date +%Y%m%d%H%M%S)'
+                sh 'docker push steven8519/engineer-service:20240105000642'
             }
 
         }
