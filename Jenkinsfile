@@ -39,5 +39,19 @@ pipeline {
                 }
             }
         }
+        stage("Docker Build") {
+            steps {
+                sh 'docker build -t steven8519/engineers-user-service:$(date +%Y%m%d%H%M%S) .'
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+                    sh "docker login -u steven8519 -p ${dockerhub}"
+                }
+                sh 'docker push steven8519/engineers-user-service:$(date +%Y%m%d%H%M%S)'
+            }
+
+        }
     }
 }
