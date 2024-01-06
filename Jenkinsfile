@@ -41,7 +41,7 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                sh 'docker build -t steven8519/engineer-dservice:$(date +%Y%m%d%H%M%S) .'
+                sh 'docker build -t steven8519/engineer-service:$(date +%Y%m%d%H%M%S) .'
             }
         }
         stage('Push Docker Image') {
