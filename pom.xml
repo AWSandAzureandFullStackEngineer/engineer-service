@@ -74,9 +74,9 @@
 						</platforms>
 					</from>
 					<to>
-						<image>docker.io/steven8519/engineer-service:$(date +%Y%m%d%H%M%S)</image>
+						<image>docker.io/steven8519/engineer-service:latest</image>
 						<tags>
-							<tag>latest</tag>
+							<tag>$(date +%Y%m%d%H%M%S)</tag>
 						</tags>
 					</to>
 				</configuration>
