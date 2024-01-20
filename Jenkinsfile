@@ -39,17 +39,9 @@ pipeline {
                 }
             }
         }
-        stage("Docker Build") {
+        stage("Docker Build and Push") {
             steps {
                 sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240119182704 .'
-            }
-        }
-        stage('Push Docker Image') {
-            steps {
-                withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
-                    sh "docker login -u steven8519 -p ${dockerhub}"
-                }
-                sh 'docker push steven8519/engineer-service:20240119182704 .'
             }
         }
     }
