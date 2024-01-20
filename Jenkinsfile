@@ -41,7 +41,7 @@ pipeline {
         }
         stage("Docker Build") {
             steps {
-                sh 'docker build -t steven8519/engineer-service:20240119182704.'
+                sh 'docker buildx build --platform linux/amd64,linux/arm64 steven8519/engineer-service:20240119182704 .'
             }
         }
         stage('Push Docker Image') {
