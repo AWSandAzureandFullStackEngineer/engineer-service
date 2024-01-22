@@ -7,5 +7,3 @@ data:
   POSTGRES_USER: "engineer25"
   POSTGRES_PASSWORD: "theword"
 
-
-
