@@ -32,5 +32,23 @@ pipeline {
                 sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240125025201 .'
             }
         }
+        stage('K8S Deploy') {
+            steps {
+                script {
+                    withKubeConfig([credentialsId: 'K8S', serverUrl: '']) {
+                        sh ('kubectl apply -f  deployment.yml')
+                    }
+                }
+            }
+        }
+        stage('K8S Service') {
+            steps {
+                script {
+                    withKubeConfig([credentialsId: 'K8S', serverUrl: '']) {
+                        sh ('kubectl apply -f service.yml')
+                    }
+                }
+            }
+        }
     }
 }

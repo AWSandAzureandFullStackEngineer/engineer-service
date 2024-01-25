@@ -1,11 +1,16 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:db
-    username: sa
-    password: password
+    url: jdbc:postgresql://172.232.31.111:5432/engineer
     driverClassName: org.h2.Driver
+    username: engineer25
   jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update  # Set your desired Hibernate DDL behavior
+    show-sql: true  # Set to true for debugging, but false in production
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   h2:
     console:
       enabled: true
