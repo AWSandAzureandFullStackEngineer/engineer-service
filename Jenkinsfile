@@ -27,19 +27,18 @@ pipeline {
                 }
             }
         }
-        stage ("SonarQube Gatekeeper") {
-                   STAGE_NAME = "SonarQube Gatekeeper"
-
-                   if (BRANCH_NAME == "develop") {
-                      echo "In 'develop' branch, skip."
-                   }
-                   else { // this is a PR build, fail on threshold spill
-                      def qualitygate = waitForQualityGate()
-                      if (qualitygate.status != "OK") {
-                         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
-                      }
-                   }
-          }
+        stage("Quality Gate"){
+            steps {
+                script {
+                    timeout(time: 1, unit: 'MINUTES') {
+                        waitForQualityGate abortPipeline: true
+                    }
+                    else {
+                        waitForQualityGate abortPipeline: false
+                    }
+                }
+            }
+        }
         stage("Docker Build and Push") {
             steps {
                 sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240119182704 .'
