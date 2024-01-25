@@ -6,14 +6,14 @@ pipeline {
             steps {
                 echo "----------- build started ----------"
                     sh 'mvn clean install -X -Dmaven.test.skip=true'
-                echo "----------- build complted ----------"
+                echo "----------- build completed ----------"
             }
         }
         stage("test")   {
             steps   {
                 echo "----------- unit test started ----------"
                     sh 'mvn surefire-report:report'
-                echo "----------- unit test Complted ----------"
+                echo "----------- unit test Completed ----------"
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Docker Build and Push") {
             steps {
-                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240119182704 .'
+                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240125025201 .'
             }
         }
     }
