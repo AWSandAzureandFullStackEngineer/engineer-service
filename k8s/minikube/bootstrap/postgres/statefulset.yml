@@ -38,13 +38,3 @@ spec:
               cpu: 500m
               memory: 512Mi
       restartPolicy: Always
-
-networks:
-  postgres:
-    driver: bridge
-  spring:
-    driver: bridge
-
-volumes:
-  postgres:
-  pgadmin:
