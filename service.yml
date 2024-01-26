@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name:  engineer-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: engineer-service
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
