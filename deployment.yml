@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name:  engineer-service
-          image: steven8519/engineer-service:20240125025201
+          image: steven8519/engineer-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
