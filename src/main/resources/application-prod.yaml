@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://172.232.31.111:5432/engineer
+    url: jdbc:postgresql://https://48b1c5ac-a5f3-4e84-a940-431450f9e747.us-ord-1.linodelke.net:5432/engineer
     driverClassName: org.h2.Driver
     username: engineer25
   jpa:
