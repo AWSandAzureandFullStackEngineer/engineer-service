@@ -10,9 +10,6 @@ spec:
   revisionHistoryLimit: 2
   strategy:
     type: Recreate
-    rollingUpdate:
-      maxUnavailable: 25%  # Maximum unavailable pods during update
-      maxSurge: 25%  # Maximum additional pods to create during update
   template:
     metadata:
       labels:
