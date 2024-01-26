@@ -11,8 +11,8 @@ spec:
   strategy:
     type: Recreate
     rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 1
+      maxUnavailable: 25%  # Maximum unavailable pods during update
+      maxSurge: 25%  # Maximum additional pods to create during update
   template:
     metadata:
       labels:
