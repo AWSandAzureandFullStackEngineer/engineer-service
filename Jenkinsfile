@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     withKubeConfig([credentialsId: 'K8S', serverUrl: '']) {
-                        sh ('kubectl apply -f  deployment.yml --skip-openapi-load')
+                        sh ('kubectl apply -f  deployment.yml')
                     }
                 }
             }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     withKubeConfig([credentialsId: 'K8S', serverUrl: '']) {
-                        sh ('kubectl apply -f service.yml --skip-openapi-load')
+                        sh ('kubectl apply -f service.yml')
                     }
                 }
             }
