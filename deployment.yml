@@ -22,8 +22,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: spring.profiles.active
-              value: prod
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod, application-prod.yaml
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
