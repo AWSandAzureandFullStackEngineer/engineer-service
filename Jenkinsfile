@@ -5,14 +5,14 @@ pipeline {
         stage("build"){
             steps {
                 echo "----------- build started ----------"
-                    sh 'mvn clean package -Dmaven.test.skip=true -X'
+                    sh 'mvn clean install -Dmaven.test.skip=true -X'
                 echo "----------- build completed ----------"
             }
         }
         stage("test")   {
             steps   {
                 echo "----------- unit test started ----------"
-                    sh 'mvn surefire-report:report'
+                    sh 'mvn test surefire-report:report'
                 echo "----------- unit test Completed ----------"
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Docker Build and Push") {
             steps {
-                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240119182704 .'
+                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:$(date +%Y%m%d%H%M%S) .'
             }
         }
         stage('K8S Deploy') {
