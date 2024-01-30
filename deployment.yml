@@ -42,8 +42,3 @@ spec:
                 secretKeyRef:
                   name: postgres-credentials
                   key: postgres_password
-          startupProbe:
-            tcpSocket:
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 5
