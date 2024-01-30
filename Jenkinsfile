@@ -5,7 +5,8 @@ pipeline {
         stage("build"){
             steps {
                 echo "----------- build started ----------"
-                    sh 'mvn clean install -X -Dmaven.test.skip=true'
+                    sh 'export IMAGE_PATH=registry.hub.docker.com/steven8519/engineers-service:$(date +%Y%m%d%H%M%S)'
+                    sh 'mvn clean install com.google.cloud.tools:jib-maven-plugin:3.3.2:build -Dimage=$IMAGE_PATH -Dmaven.test.skip=true'
                 echo "----------- build completed ----------"
             }
         }
@@ -29,7 +30,7 @@ pipeline {
         }
         stage("Docker Build and Push") {
             steps {
-                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240125025201 .'
+                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:latest .'
             }
         }
         stage('K8S Deploy') {

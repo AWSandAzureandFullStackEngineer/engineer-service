@@ -22,6 +22,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: application-prod.yaml
             - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
@@ -42,3 +44,8 @@ spec:
                 secretKeyRef:
                   name: postgres-credentials
                   key: postgres_password
+          startupProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 5
