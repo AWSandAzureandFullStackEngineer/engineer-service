@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgres-config
 data:
-  host: "172.232.19.199"
+  host: "172.232.19.204"
   name: "engineer"
   application.yaml: |-
     spring:
