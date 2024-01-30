@@ -5,8 +5,4 @@ metadata:
 data:
   host: "172.232.19.246"
   name: "engineer"
-  application.yaml: |-
-    spring:
-      profiles: prod
-      
-      
+
