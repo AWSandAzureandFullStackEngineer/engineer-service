@@ -5,7 +5,7 @@ pipeline {
         stage("build"){
             steps {
                 echo "----------- build started ----------"
-                    sh 'mvn clean package com.google.cloud.tools:jib-maven-plugin:3.3.2:build -Dmaven.test.skip=true -X'
+                    sh 'mvn clean package -Dmaven.test.skip=true -X'
                 echo "----------- build completed ----------"
             }
         }
