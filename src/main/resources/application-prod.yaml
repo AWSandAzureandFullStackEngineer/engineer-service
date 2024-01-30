@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://https://48b1c5ac-a5f3-4e84-a940-431450f9e747.us-ord-1.linodelke.net:5432/engineer
-    driverClassName: org.h2.Driver
-    username: engineer25
+    url: jdbc:postgresql://{DB_HOST}:5432/{DB_NAME}
+    username: {POSTGRES_USER}
+    password: {POSTGRES_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update  # Set your desired Hibernate DDL behavior
