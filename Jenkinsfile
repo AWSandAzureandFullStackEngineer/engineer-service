@@ -5,7 +5,7 @@ pipeline {
         stage("build"){
             steps {
                 echo "----------- build started ----------"
-                    sh 'mvn clean install -Dmaven.test.skip=true -X'
+                    sh 'mvn clean package -Dmaven.test.skip=true -X'
                 echo "----------- build completed ----------"
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Docker Build and Push") {
             steps {
-                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:latest .'
+                sh ' docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240119182704 .'
             }
         }
         stage('K8S Deploy') {

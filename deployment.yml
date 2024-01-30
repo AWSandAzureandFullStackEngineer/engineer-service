@@ -7,9 +7,6 @@ spec:
   selector:
     matchLabels:
       app: engineer-service
-  revisionHistoryLimit: 2
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -17,7 +14,30 @@ spec:
     spec:
       containers:
         - name:  engineer-service
-          image: steven8519/engineer-service:latest
+          image: steven8519/engineer-service:20240119182704
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: dev
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: host
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: name
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: postgres_password
