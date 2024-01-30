@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Docker Build and Push") {
             steps {
-                sh 'docker buildx build --push --platform linux/arm64 --tag steven8519/engineer-service:20240130163907 .'
+                sh 'docker buildx build --push --platform linux/amd64 --tag steven8519/engineer-service:20240130163907 .'
             }
         }
         stage('K8S Deploy') {
