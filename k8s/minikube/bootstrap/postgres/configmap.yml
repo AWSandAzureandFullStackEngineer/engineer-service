@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgres-config
 data:
-  host: "172.232.19.246"
+  host: "172.234.211.72"
   name: "engineer"
   application-dev.yaml: |-
     spring:
@@ -24,7 +24,7 @@ data:
   application-prod.yaml: |
     spring:
       datasource:
-        url: jdbc:postgresql://172.232.19.199:5432/engineer
+        url: jdbc:postgresql://172.234.211.72:5432/engineer
         username: engineer25
         password: thewordistheword
       jpa:
