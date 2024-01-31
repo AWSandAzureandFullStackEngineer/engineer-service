@@ -1,11 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://172.234.211.72:5432/engineer
+    url: jdbc:postgresql://172.234.210.85:5432/engineer
     username: engineer25
     password: thewordistheword
   jpa:
     hibernate:
-      ddl-auto: update  # Set your desired Hibernate DDL behavior
+      ddl-auto: create  # Set your desired Hibernate DDL behavior
     show-sql: true  # Set to true for debugging, but false in production
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
