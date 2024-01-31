@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c591899-d3a7-48b9-a88a-24566cc2f29f" name="Changes" comment="" />
+    <list default="true" id="6c591899-d3a7-48b9-a88a-24566cc2f29f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +146,7 @@
       <workItem from="1706172703796" duration="21447000" />
       <workItem from="1706486060692" duration="34859000" />
       <workItem from="1706641689309" duration="11145000" />
-      <workItem from="1706653630810" duration="6098000" />
+      <workItem from="1706653630810" duration="7065000" />
     </task>
     <servers />
   </component>
