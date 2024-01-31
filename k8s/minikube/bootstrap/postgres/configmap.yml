@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: postgres-config
 data:
-  host: "172.234.211.72"
+  host: "172.234.209.80"
   name: "engineer"
