@@ -1,6 +1,8 @@
-FROM eclipse-temurin:17
-ADD target/engineer-service-0.0.1-SNAPSHOT.jar ./app/engineer-service.jar
-ENTRYPOINT ["java", "-jar", "./app/engineers-service.jar"]
+FROM openjdk:20-bullseye
+EXPOSE 8080
+ARG JAR_FILE=target/engineer-service-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
 
 
 
