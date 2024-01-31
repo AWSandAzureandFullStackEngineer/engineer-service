@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17
-COPY target/engineer-service-0.0.1-SNAPSHOT.jar /app/engineer-service.jar
+ADD target/engineer-service-0.0.1-SNAPSHOT.jar /app/engineer-service.jar
 CMD ["java", "-jar", "/app/engineers-service.jar"]
 
 
