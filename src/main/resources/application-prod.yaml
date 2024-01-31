@@ -9,5 +9,3 @@ spring:
     show-sql: true  # Set to true for debugging, but false in production
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
